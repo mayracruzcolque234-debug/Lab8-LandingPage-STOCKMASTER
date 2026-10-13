@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STOCKMASTER - Sistema integral de administración de productos y categorías para negocios. Proyecto universitario.">
+  <meta name="keywords" content="inventario, administración de productos, categorías, control de stock, stockmaster, gestión comercial">
+  <meta name="author" content="STOCKMASTER Team">
+  <title>STOCKMASTER | Controla tu inventario, impulsa tu negocio</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Hoja de estilos vinculada -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cintillo académico superior -->
+  <div class="top-banner">
+    <div class="container top-banner-content">
+      <span><i class="fa-solid fa-graduation-cap"></i> <strong>Laboratorio 8:</strong> Proyecto Académico Universitario &bull; Sistema de Gestión de Inventario</span>
+      <a href="#proyecto" class="top-banner-link">Ficha técnica <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- ENCABEZADO Y BARRA DE NAVEGACIÓN -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo" aria-label="STOCKMASTER Inicio">
+        <span class="logo-icon">
+          <i class="fa-solid fa-boxes-stacked"></i>
+        </span>
+        <div class="logo-text">
+          <span class="brand-name">STOCK<span class="brand-accent">MASTER</span></span>
+          <span class="brand-tag">Gestión Comercial</span>
+        </div>
+      </a>
+
+      <!-- Menú para escritorio -->
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li class="nav-item"><a href="#problema" class="nav-link">El Problema</a></li>
+          <li class="nav-item"><a href="#caracteristicas" class="nav-link">Características</a></li>
+          <li class="nav-item"><a href="#simulador" class="nav-link">Simulador Demo</a></li>
+          <li class="nav-item"><a href="#beneficios" class="nav-link">Beneficios</a></li>
+          <li class="nav-item"><a href="#proyecto" class="nav-link">Sobre el Proyecto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón de acción y hamburguesa para móviles -->
+      <div class="nav-actions">
+        <a href="#simulador" class="btn btn-primary nav-btn">
+          <i class="fa-solid fa-play"></i> Probar Demo
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú lateral para dispositivos móviles (Drawer) -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></span>
+        <span class="brand-name">STOCK<span class="brand-accent">MASTER</span></span>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#inicio" class="mobile-nav-link">Inicio</a></li>
+      <li><a href="#problema" class="mobile-nav-link">El Problema</a></li>
+      <li><a href="#caracteristicas" class="mobile-nav-link">Características</a></li>
+      <li><a href="#simulador" class="mobile-nav-link">Simulador Demo</a></li>
+      <li><a href="#beneficios" class="mobile-nav-link">Beneficios</a></li>
+      <li><a href="#proyecto" class="mobile-nav-link">Sobre el Proyecto</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="#simulador" class="btn btn-primary btn-block mobile-drawer-btn">
+        <i class="fa-solid fa-play"></i> Probar Demo
+      </a>
+      <p class="drawer-copy">Proyecto Universitario &bull; Lab 8</p>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <main>
+    <!-- 1. SECCIÓN PRINCIPAL (HERO) -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Solución Universitaria para Negocios</span>
+          </div>
+          <h1 class="hero-title">
+            Controla tu inventario, <span class="gradient-text">impulsa tu negocio</span>
+          </h1>
+          <p class="hero-description">
+            <strong>STOCKMASTER</strong> es una aplicación creada para modernizar la gestión de productos y categorías de cualquier negocio. Diseñada para ordenar almacenes, prevenir desabastecimientos y brindar visibilidad en tiempo real a los comerciantes.
+          </p>
+          <div class="hero-buttons">
+            <a href="#simulador" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-laptop-code"></i> Explorar Demo Interactiva
+            </a>
+            <a href="#caracteristicas" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-list-check"></i> Ver Características
+            </a>
+          </div>
+
+          <!-- Puntos destacados de confianza -->
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check highlight-icon"></i>
+              <span>Categorización ágil</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check highlight-icon"></i>
+              <span>Alertas de stock mínimo</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check highlight-icon"></i>
+              <span>100% Adaptable a móviles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta visual de previsualización (Dashboard Mockup) -->
+        <div class="hero-visual">
+          <div class="mockup-window">
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="mockup-address-bar">
+                <i class="fa-solid fa-lock"></i> stockmaster.local/panel-control
+              </div>
+              <div class="mockup-badge">Prototipo Activo</div>
+            </div>
+
+            <div class="mockup-body">
+              <!-- Métricas rápidas del prototipo -->
+              <div class="mockup-kpis">
+                <div class="kpi-card">
+                  <span class="kpi-label">Total Productos</span>
+                  <span class="kpi-value">124</span>
+                  <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> Catálogo al día</span>
+                </div>
+                <div class="kpi-card">
+                  <span class="kpi-label">Categorías</span>
+                  <span class="kpi-value">8</span>
+                  <span class="kpi-trend neutral"><i class="fa-solid fa-folder-tree"></i> Estructuradas</span>
+                </div>
+                <div class="kpi-card alert-kpi">
+                  <span class="kpi-label">Stock Bajo</span>
+                  <span class="kpi-value">2</span>
+                  <span class="kpi-trend warning"><i class="fa-solid fa-triangle-exclamation"></i> Requiere pedido</span>
+                </div>
+              </div>
+
+              <!-- Tabla de vista previa -->
+              <div class="mockup-table-preview">
+                <div class="table-preview-header">
+                  <span class="table-title"><i class="fa-solid fa-layer-group"></i> Artículos destacados</span>
+                  <span class="table-pill">Muestra visual</span>
+                </div>
+                <div class="preview-row">
+                  <div class="row-info">
+                    <span class="item-name">Auriculares Bluetooth Pro</span>
+                    <span class="item-cat">Tecnología &bull; SKU: TEC-001</span>
+                  </div>
+                  <span class="status-chip chip-success">Stock: 24 uds</span>
+                  <span class="item-price">$45.00</span>
+                </div>
+                <div class="preview-row">
+                  <div class="row-info">
+                    <span class="item-name">Cuaderno Profesional Rayado</span>
+                    <span class="item-cat">Papelería &bull; SKU: PAP-089</span>
+                  </div>
+                  <span class="status-chip chip-warning">Stock: 3 uds</span>
+                  <span class="item-price">$4.20</span>
+                </div>
+                <div class="preview-row">
+                  <div class="row-info">
+                    <span class="item-name">Teclado Mecánico RGB</span>
+                    <span class="item-cat">Tecnología &bull; SKU: TEC-042</span>
+                  </div>
+                  <span class="status-chip chip-danger">Agotado: 0 uds</span>
+                  <span class="item-price">$59.99</span>
+                </div>
+              </div>
+
+              <div class="mockup-footer-note">
+                <i class="fa-solid fa-circle-info"></i> Vista preliminar del panel administrativo STOCKMASTER
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SECCIÓN: EL PROBLEMA QUE RESUELVE -->
+    <section class="section problem-section" id="problema">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico de Negocio</span>
+          <h2 class="section-title">El Problema que Resolvemos</h2>
+          <p class="section-subtitle">
+            Muchos pequeños comercios pierden clientes, tiempo y rentabilidad por gestionar su stock con métodos improvisados.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
+            <h3 class="problem-card-title">Hojas de cálculo desactualizadas</h3>
+            <p class="problem-card-desc">
+              Llevar el stock en cuadernos o planillas compartidas provoca fórmulas rotas, errores de tipeo y registros que nunca coinciden con la estantería real.
+            </p>
+            <div class="problem-resolution">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>STOCKMASTER:</strong> Registro ordenado y validado en una única interfaz central.</span>
+            </div>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-boxes-packing"></i>
+            </div>
+            <h3 class="problem-card-title">Desorden sin categorías claras</h3>
+            <p class="problem-card-desc">
+              Mezclar artículos sin familias definidas hace que los empleados tarden minutos en saber si un producto existe o en qué sección ubicarlo.
+            </p>
+            <div class="problem-resolution">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>STOCKMASTER:</strong> Categorización visual con colores y filtros instantáneos.</span>
+            </div>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-store-slash"></i>
+            </div>
+            <h3 class="problem-card-title">Quiebres imprevistos de stock</h3>
+            <p class="problem-card-desc">
+              Enterarse de que no queda mercadería en el momento en que un cliente va a comprar significa ventas perdidas y clientes insatisfechos.
+            </p>
+            <div class="problem-resolution">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>STOCKMASTER:</strong> Alertas preventivas configurables antes de llegar a cero unidades.</span>
+            </div>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h3 class="problem-card-title">Desconocimiento del capital invertido</h3>
+            <p class="problem-card-desc">
+              No saber cuánto dinero hay inmovilizado en mercadería dificulta compras eficientes y pone en riesgo el flujo de caja del negocio.
+            </p>
+            <div class="problem-resolution">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>STOCKMASTER:</strong> Cálculo en tiempo real del valor del stock y conteo de existencias.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contraste: Métodos tradicionales vs STOCKMASTER -->
+        <div class="comparison-banner">
+          <div class="comparison-column before">
+            <div class="comparison-header">
+              <i class="fa-solid fa-circle-xmark"></i>
+              <h4>Sin STOCKMASTER</h4>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-xmark"></i> Conteos manuales agotadores al cierre de cada día.</li>
+              <li><i class="fa-solid fa-xmark"></i> Mercadería perdida o vencida en el depósito.</li>
+              <li><i class="fa-solid fa-xmark"></i> Compras desmedidas que sobrecargan el presupuesto.</li>
+            </ul>
+          </div>
+          <div class="comparison-divider">
+            <span>VS</span>
+          </div>
+          <div class="comparison-column after">
+            <div class="comparison-header">
+              <i class="fa-solid fa-circle-check"></i>
+              <h4>Con STOCKMASTER</h4>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Control ágil de entradas, salidas y modificaciones.</li>
+              <li><i class="fa-solid fa-check"></i> Catálogo clasificado con búsqueda en segundos.</li>
+              <li><i class="fa-solid fa-check"></i> Semaforización clara para reabastecer a tiempo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECCIÓN: CARACTERÍSTICAS (PRODUCTOS Y CATEGORÍAS) -->
+    <section class="section features-section" id="caracteristicas">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-cubes"></i> Módulos Principales</span>
+          <h2 class="section-title">Características del Sistema</h2>
+          <p class="section-subtitle">
+            Dos pilares fundamentales diseñados con precisión para administrar el inventario con total claridad.
+          </p>
+        </div>
+
+        <div class="features-split">
+          <!-- Tarjeta 1: Administración de Productos -->
+          <div class="feature-card highlight-product">
+            <div class="feature-card-banner">
+              <div class="card-icon-wrapper">
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+              <span class="card-badge">Módulo 1</span>
+            </div>
+            <h3 class="feature-title">Administración de Productos</h3>
+            <p class="feature-desc">
+              Control exhaustivo de cada artículo comercial con trazabilidad completa de costos, precios de venta y existencias disponibles.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-barcode"></i></div>
+                <div>
+                  <strong>Identificación única & SKU:</strong>
+                  <span>Asignación de códigos estándar, nombres comerciales y descripciones claras.</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-tags"></i></div>
+                <div>
+                  <strong>Control de Precios:</strong>
+                  <span>Gestión del precio unitario de venta para mantener actualizada la lista de precios.</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <div>
+                  <strong>Nivel de Stock y Umbrales Mínimos:</strong>
+                  <span>Configuración de stock de seguridad para evitar quiebres de inventario.</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div>
+                  <strong>Búsqueda y Filtrado Inmediato:</strong>
+                  <span>Localiza cualquier artículo en milisegundos escribiendo su nombre o código.</span>
+                </div>
+              </li>
+            </ul>
+            <div class="feature-card-footer">
+              <a href="#simulador" class="btn btn-outline">Probar en el Simulador</a>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Administración de Categorías -->
+          <div class="feature-card highlight-category">
+            <div class="feature-card-banner">
+              <div class="card-icon-wrapper">
+                <i class="fa-solid fa-folder-tree"></i>
+              </div>
+              <span class="card-badge">Módulo 2</span>
+            </div>
+            <h3 class="feature-title">Administración de Categorías</h3>
+            <p class="feature-desc">
+              Estructuración jerárquica de tu catálogo comercial por familias y líneas para acelerar la navegación y el control.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-folder-plus"></i></div>
+                <div>
+                  <strong>Clasificación Flexible:</strong>
+                  <span>Crea familias comerciales a medida (Tecnología, Papelería, Alimentos, Hogar, etc.).</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-palette"></i></div>
+                <div>
+                  <strong>Codificación por Colores:</strong>
+                  <span>Insignias cromáticas para identificar visualmente cada sector del inventario.</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-calculator"></i></div>
+                <div>
+                  <strong>Conteo de Artículos por Grupo:</strong>
+                  <span>Revisa al instante cuántos productos pertenecen a cada categoría comercial.</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-icon"><i class="fa-solid fa-link"></i></div>
+                <div>
+                  <strong>Vinculación Dinámica:</strong>
+                  <span>Asigna o reubica productos fácilmente entre categorías sin duplicar registros.</span>
+                </div>
+              </li>
+            </ul>
+            <div class="feature-card-footer">
+              <a href="#simulador" class="btn btn-outline">Ver Categorías Activas</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cinta de capacidades adicionales -->
+        <div class="feature-extra-strip">
+          <div class="strip-item">
+            <i class="fa-solid fa-bell strip-icon"></i>
+            <div>
+              <h4>Semáforo de Disponibilidad</h4>
+              <p>Estados visuales en verde (disponible), amarillo (stock bajo) y rojo (agotado).</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <i class="fa-solid fa-mobile-screen strip-icon"></i>
+            <div>
+              <h4>Diseño 100% Responsivo</h4>
+              <p>Funciona a la perfección en teléfonos móviles, tabletas y computadoras de escritorio.</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <i class="fa-solid fa-shield-halved strip-icon"></i>
+            <div>
+              <h4>Validación de Datos</h4>
+              <p>Formularios limpios que evitan cantidades negativas o campos en blanco accidentales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECCIÓN INTERACTIVA: SIMULADOR DEMO -->
+    <section class="section demo-section" id="simulador">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-flask"></i> Demostración Funcional</span>
+          <h2 class="section-title">Simulador Interactivo de STOCKMASTER</h2>
+          <p class="section-subtitle">
+            Prueba cómo interactúa la interfaz: filtra por categorías, busca productos por nombre o SKU y prueba registrar nuevos artículos en la memoria del navegador.
+          </p>
+          <div class="disclaimer-badge">
+            <i class="fa-solid fa-circle-info"></i> <strong>Nota del laboratorio:</strong> Este simulador opera con JavaScript en el navegador para demostrar la experiencia visual y funcional del proyecto.
+          </div>
+        </div>
+
+        <!-- Contenedor del simulador -->
+        <div class="demo-app-container">
+          <!-- Barra de controles -->
+          <div class="demo-controls-bar">
+            <!-- Barra de búsqueda en tiempo real -->
+            <div class="demo-search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="demoSearchInput" placeholder="Buscar por producto o SKU..." aria-label="Buscar producto">
+            </div>
+
+            <!-- Filtros de Categorías dinámicos -->
+            <div class="demo-categories-filter" id="categoryFiltersContainer">
+              <button class="cat-pill active" data-category="todas">
+                Todas <span class="pill-count" id="countAll">0</span>
+              </button>
+              <!-- Las categorías se insertan dinámicamente con JavaScript -->
+            </div>
+
+            <!-- Botón para modal de añadir -->
+            <button class="btn btn-primary btn-sm" id="btnOpenAddModal">
+              <i class="fa-solid fa-plus"></i> Añadir Producto
+            </button>
+          </div>
+
+          <!-- Barra de métricas en vivo del simulador -->
+          <div class="demo-stats-strip">
+            <div class="demo-stat">
+              <span>Productos mostrados:</span>
+              <strong id="statVisibleCount">0</strong>
+            </div>
+            <div class="demo-stat">
+              <span>Valor total en stock:</span>
+              <strong id="statTotalValue">$0.00</strong>
+            </div>
+            <div class="demo-stat">
+              <span>Productos en alerta:</span>
+              <strong id="statAlertCount" class="text-danger">0</strong>
+            </div>
+          </div>
+
+          <!-- Cuadrícula dinámica de productos -->
+          <div class="demo-products-grid" id="demoProductsGrid">
+            <!-- Renderizado dinámico desde script.js -->
+          </div>
+
+          <!-- Estado vacío si la búsqueda no arroja coincidencias -->
+          <div class="demo-empty-state" id="demoEmptyState" style="display: none;">
+            <i class="fa-solid fa-box-open"></i>
+            <h4>No se encontraron productos</h4>
+            <p>Intenta con otro término de búsqueda o selecciona otra categoría.</p>
+            <button class="btn btn-secondary btn-sm" id="btnResetFilters">Restablecer filtros</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SECCIÓN: BENEFICIOS -->
+    <section class="section benefits-section" id="beneficios">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-trophy"></i> Valor para el Negocio</span>
+          <h2 class="section-title">Beneficios Clave de STOCKMASTER</h2>
+          <p class="section-subtitle">
+            Diseñado para que comerciantes y colaboradores gestionen sus almacenes sin fricción y con total seguridad.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-number">01</div>
+            <div class="benefit-icon-box">
+              <i class="fa-solid fa-stopwatch"></i>
+            </div>
+            <h3>Ahorro de Tiempo</h3>
+            <p>
+              Reduce drásticamente el tiempo dedicado a auditorías y conteos manuales. Cualquier consulta toma fracciones de segundo.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-number">02</div>
+            <div class="benefit-icon-box">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <h3>Cero Quiebres de Stock</h3>
+            <p>
+              Las alertas visuales de stock mínimo avisan antes de que un producto de alta rotación se quede sin existencias.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-number">03</div>
+            <div class="benefit-icon-box">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Decisiones Informadas</h3>
+            <p>
+              Visualiza en cualquier instante el valor monetario de tu mercadería y el desempeño por categoría comercial.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-number">04</div>
+            <div class="benefit-icon-box">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <h3>Facilidad de Uso</h3>
+            <p>
+              Interfaz moderna y limpia sin curvas complejas de aprendizaje. Lista para usar en cualquier negocio sin capacitaciones pesadas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Banner de llamada a la acción -->
+        <div class="cta-card">
+          <div class="cta-content">
+            <h3 class="cta-title">¿Listo para transformar la gestión de tu inventario?</h3>
+            <p class="cta-desc">
+              STOCKMASTER demuestra cómo un diseño web moderno y ordenado puede resolver problemas reales de negocio con rapidez.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="#simulador" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-bolt"></i> Explorar Simulador Ahora
+            </a>
+            <a href="#proyecto" class="btn btn-ghost btn-lg">
+              <i class="fa-solid fa-graduation-cap"></i> Ver Ficha del Proyecto
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SECCIÓN: INFORMACIÓN DEL PROYECTO UNIVERSITARIO -->
+    <section class="section project-section" id="proyecto">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-book-open"></i> Ficha Técnica</span>
+          <h2 class="section-title">Sobre el Proyecto STOCKMASTER</h2>
+          <p class="section-subtitle">
+            Laboratorio 8 &bull; Especificaciones de arquitectura, objetivos y tecnologías empleadas.
+          </p>
+        </div>
+
+        <div class="project-details-grid">
+          <div class="project-info-card">
+            <div class="info-card-header">
+              <i class="fa-solid fa-circle-nodes info-icon"></i>
+              <h3>Contexto del Laboratorio</h3>
+            </div>
+            <p class="info-text">
+              <strong>STOCKMASTER</strong> es una propuesta de aplicación web empresarial orientada a la democratización de herramientas de inventario para pequeños negocios y microempresas.
+            </p>
+            <div class="info-badges">
+              <span class="badge-tag"><i class="fa-solid fa-school"></i> Laboratorio 8</span>
+              <span class="badge-tag"><i class="fa-solid fa-code"></i> Frontend Web</span>
+              <span class="badge-tag"><i class="fa-solid fa-layer-group"></i> Arquitectura Modular</span>
+            </div>
+          </div>
+
+          <div class="project-info-card">
+            <div class="info-card-header">
+              <i class="fa-solid fa-microchip info-icon"></i>
+              <h3>Tecnologías Empleadas</h3>
+            </div>
+            <ul class="tech-stack-list">
+              <li>
+                <span class="tech-badge html">HTML5</span>
+                <span>Estructura semántica, accesibilidad para lectores y maquetación limpia.</span>
+              </li>
+              <li>
+                <span class="tech-badge css">CSS3</span>
+                <span>Variables de diseño, Flexbox, CSS Grid y adaptabilidad para pantallas móviles y escritorios.</span>
+              </li>
+              <li>
+                <span class="tech-badge js">JavaScript</span>
+                <span>Manipulación del DOM, filtros dinámicos, cálculos en tiempo real y componentes interactivos.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-info-card full-width">
+            <div class="info-card-header">
+              <i class="fa-solid fa-list-check info-icon"></i>
+              <h3>Estado del Prototipo & Transparencia</h3>
+            </div>
+            <p class="info-text">
+              Estado verificado de las funciones para este informe académico:
+            </p>
+            <div class="status-grid">
+              <div class="status-box completed">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Landing Page Profesional:</strong>
+                  <span>100% implementada con diseño responsive para teléfonos y computadoras.</span>
+                </div>
+              </div>
+              <div class="status-box completed">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Simulador Interactivo en Navegador:</strong>
+                  <span>100% operativo con filtrado de categorías, buscador y cálculo de métricas.</span>
+                </div>
+              </div>
+              <div class="status-box in-progress">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <div>
+                  <strong>Módulo de Base de Datos y Backend:</strong>
+                  <span>Fase posterior planificada para arquitectura de persistencia con API REST.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL: REGISTRAR PRODUCTO EN EL SIMULADOR -->
+  <div class="modal-backdrop" id="addProductModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">
+          <i class="fa-solid fa-cart-plus"></i> Registrar Producto de Prueba
+        </h3>
+        <button class="modal-close" id="btnCloseAddModal" aria-label="Cerrar modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="addProductForm" class="modal-body">
+        <div class="form-group">
+          <label for="prodName">Nombre del Producto <span class="req">*</span></label>
+          <input type="text" id="prodName" required placeholder="Ej. Mouse Ergonómico Inalámbrico" class="form-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prodCategory">Categoría <span class="req">*</span></label>
+            <select id="prodCategory" required class="form-input">
+              <!-- Se cargan dinámicamente -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="prodSku">Código SKU <span class="req">*</span></label>
+            <input type="text" id="prodSku" required placeholder="Ej. TEC-105" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prodPrice">Precio Unitario ($) <span class="req">*</span></label>
+            <input type="number" id="prodPrice" required min="0.01" step="0.01" placeholder="Ej. 19.99" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="prodStock">Stock Inicial <span class="req">*</span></label>
+            <input type="number" id="prodStock" required min="0" step="1" placeholder="Ej. 15" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prodMinStock">Stock Mínimo de Alerta</label>
+          <input type="number" id="prodMinStock" min="1" step="1" value="5" placeholder="5" class="form-input">
+          <small class="form-help">Si el stock cae por debajo de este valor, se activará el aviso preventivo.</small>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCancelModal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i> Guardar en Simulador
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="logo footer-logo">
+          <span class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></span>
+          <span class="brand-name">STOCK<span class="brand-accent">MASTER</span></span>
+        </div>
+        <p class="footer-desc">
+          Aplicación moderna para administrar productos y categorías con rapidez y rigor visual. Proyecto desarrollado para el Laboratorio 8.
+        </p>
+        <div class="footer-academic-badge">
+          <i class="fa-solid fa-graduation-cap"></i> Proyecto Universitario 2026 &bull; Lab 8
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#inicio"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+          <li><a href="#problema"><i class="fa-solid fa-angle-right"></i> El Problema</a></li>
+          <li><a href="#caracteristicas"><i class="fa-solid fa-angle-right"></i> Características</a></li>
+          <li><a href="#simulador"><i class="fa-solid fa-angle-right"></i> Simulador Demo</a></li>
+          <li><a href="#beneficios"><i class="fa-solid fa-angle-right"></i> Beneficios</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Módulos del Sistema</h4>
+        <ul class="footer-links">
+          <li><a href="#caracteristicas"><i class="fa-solid fa-angle-right"></i> Control de Productos</a></li>
+          <li><a href="#caracteristicas"><i class="fa-solid fa-angle-right"></i> Gestión de Categorías</a></li>
+          <li><a href="#caracteristicas"><i class="fa-solid fa-angle-right"></i> Alertas de Stock Bajo</a></li>
+          <li><a href="#caracteristicas"><i class="fa-solid fa-angle-right"></i> Cálculo de Inventario</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Información del Proyecto</h4>
+        <ul class="footer-meta-list">
+          <li>
+            <i class="fa-solid fa-laptop-code"></i>
+            <span><strong>Proyecto:</strong> Laboratorio 8 - Landing Page</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-code"></i>
+            <span><strong>Stack:</strong> HTML5, CSS3, JavaScript</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-check-double"></i>
+            <span><strong>Versión:</strong> Prototipo 1.0</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Barra de copyright inferior -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 <strong>STOCKMASTER</strong> - Proyecto Universitario. Todos los derechos reservados.</p>
+        <p class="footer-note">Diseñado con HTML5 semántico, CSS3 moderno y JavaScript vanilla.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante para volver arriba -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Script JavaScript vinculado -->
+  <script src="script.js"></script>
+</body>
+</html>
